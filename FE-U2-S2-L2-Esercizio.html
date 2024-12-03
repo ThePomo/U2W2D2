@@ -1,99 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
-
-    <!-- Abbiamo bisogno di un sito web per un'agenzia di viaggi!
-
-In questa pagina aggiungerai destinazioni di posti che sogni di visitare in futuro.
-
-Il progetto non richiede alcuna customizzazione di CSS, dovrai crearlo interamente usando le classi di bootstrap, sia per quello che riguarda il layout che lo stile.
-
-
-Testa frequentemente il tuo lavoro nelle 3 principali risoluzioni (mobile, tablet, desktop) usando i developer tools del browser nella sezione emulazione device, per una maggiore precisione.
-
-Inizia utilizzando i componenti esistenti di Bootstrap 5 per creare la tua pagina (modificali all'occorrenza utilizzando le utility classes di bootstrap: colori, spazi, margini, dimensioni etc...)
-Usa container > row > col-* in questo ordine per ottenere un layout responsive perfetto.
-
-Esercizi:
-
-1) Implementa una navbar con questi elementi di menu:
-Home
-Saldi
-Welcome Summer
-Last Minute
-Recensioni
-
-Collegherai ogni sezione della pagina agli elementi del menu corrispondenti. 
-
-2) Aggiungi un logo alla navbar, un qualsiasi logo di agenzia di viaggi, anche inventata.
-
-3) Aggiungi una sezione introduttiva con il nome, il payoff dell'agenzia, 
-una breve descrizione in corsivo e una call-to-action (bottone) "Prenota ora" di colore azzurro chiaro e testo bianco e grassetto
-
-Il background della sezione sarà grigio chiaro e con bordi arrotondati e del padding generoso all'interno
-
-4) Implementa la sezione "Saldi". Qui mostrerai 4 destinazioni.
-
-In questa sezione dovranno esserci:
-
-4 card per destinazioni per linea a schermo grande - desktop (quattro sulla stessa linea)
-3 card per destinazioni per linea a schermo medio  - tablet  (una dovrà scomparire)
-2 card per destinazioni per linea a schermo piccolo - mobile (due per linea)
-
-le card avranno un bordo di 2px azzurro chiaro, il bottone azzurro chiaro e testo default
-
-5) Implementa la sezione "Welcome Summer". Qui mostrerai 6 destinazioni al tuo utente. (nessun bordo, ma stesso stile dei bottoni precedenti)
-
-In questa sezione dovranno esserci:
-
-6 card per destinazioni per linea a schermo extra large
-3 card per destinazioni per linea a schermo grande (desktop)
-2 card per destinazioni per linea a schermo medio (tablet)
-2 card per destinazioni per linea a schermo piccolo (mobile)
-
-6) Implementa la sezione "Offerta del giorno". Qui avrai:
-
-66% dello spazio dedicato all'immagine del luogo di destinazione
-33% dedicato al nome, date, prezzo e un badge con "best offer" come testo
-
-l'immagine avrà i bordi arrotondati e un'ombra leggera
-per il contenuto: il nome dovrà essere più grande del resto,
-le date dovranno essere formattate con font "monospace",
-il prezzo dovrà essere definito come "lead"
-e il badge sarà scuro
-
-
-7) Rendi invisibile la sezione "Offerta del giorno" su schermi piccoli.
-
-8) Aggiungi nella sezione "Welcome Summer" un'ombra grande ad ogni card.
-
-9) Crea una sezione "Last Minute", in cui mostrerai 6 immagini delle destinazioni last minute come rettangoli ombreggiati dai bordi arrotondati, senza testo. Rendile responsive come preferisci!
-
-10) Crea una sezione "Recensioni", dove l'utente potrà trovare alcuni feedback da utenti fittizi. 
-Piccola immagine tonda a sinistra con bordo 2px azzurro, nome utente e recensione a destra
-
-11) Crea un footer con le informazioni dell'agenzia e un bottone "Contattaci".
-
-
-
-EXTRAS
-
-12) Crea un bottone vicino ad ogni sezione per collassarla e riaprirla se premuto.
-
-13) Crea la possibilità di contare il numero di "viaggi" presenti sulla pagina e visualizzare il risultato in un alert.
-
-14) Crea un modale con un campo email e un messaggio.
-
-15) Quando l'utente cliccherà su "Contattaci", il modale dovrà essere visualizzato.
-
-16) Crea una funzione che aggiunga un badge con la scritta "HOT" su ognuna delle offerte "Welcome Summer" posizionato in alto a destra.
-
-17) Crea una funzione che rimuova tutte le "card" dalla pagina
-
--->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>esercizio bootstrap 2</title>
 </head>
 
-<body></body>
+<body>
+
+    <body class="bg-white">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light px-">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="assets/img/__260x260_SiVola_Logo.jpg" alt="Logo" class="me-2 img-fluid"
+                        style="max-width: 100px;">
+
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#saldi">Saldi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#welcome-summer">Welcome Summer</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#last-minute">Last Minute</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#recensioni">Recensioni</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Cerca posti da sogno"
+                            aria-label="Cerca">
+                        <button class="btn btn-outline-danger text-danger " type="submit">Cerca</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!--Primo blocco -->
+        <header class="container my-5 p-5 bg-white rounded shadow">
+            <div class=" d-flex align-items-baseline">
+                <h1 class="display-4  me-2">Eveline-R</h1>
+                <small class="text-muted fs-5 fw-normal align-self-center">— Feel the Freedom</small>
+            </div>
+            <hr class="my-4">
+            <p class="lead fst-italic text-secondary mt-3">Scopri le destinazioni più calde del momento!</p>
+
+            <a href="#" class="btn btn-info text-white" type="submit">Cerca</button>
+                </form></a>
+        </header>
+
+        <!-- Saldi -->
+        <section id="saldi" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Saldi</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                    <!-- Cards -->
+                    <!--1-->
+                    <div class="col">
+                        <div class="card border-info h-100 d-flex flex-column">
+                            <img src="assets/img/bali.webp" class="card-img-top" alt="Destinazione"
+                                style="height: 200px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column flex-grow-1">
+                                <h5 class="card-title">Bali</h5>
+                                <p class="card-text flex-grow-1">Natura e misticismo, tramonti impareggiabili, spiagge
+                                    meravigliose e molto altro: preparatevi ad un viaggio incredibile!</p>
+                                <a href="#" class="btn btn-info text-black mt-auto">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <div class="col">
+                        <div class="card border-info  h-100 d-flex flex-column">
+                            <img src="assets/img/japan.webp" class="card-img-top" alt="Destinazione"
+                                style="height: 200px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column flex-grow-1">
+                                <h5 class="card-title">Tokyo</h5>
+                                <p class="card-text flex-grow-1">Un viaggio alla scoperta di Tokyo, capitale delle
+                                    stranezze e dell'ordine, dei neon, dei manga e dei templi secolari. Siete pronti a
+                                    scoprire questa folle terra!</p>
+                                <a href="#" class="btn btn-info text-black mt-auto">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--3-->
+                    <div class="col">
+                        <div class="card border-info h-100 d-flex flex-column">
+                            <img src="assets/img/parigi.avif" class="card-img-top" alt="Destinazione"
+                                style="height: 200px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column flex-grow-1">
+                                <h5 class="card-title">Parigi</h5>
+                                <p class="card-text flex-grow-1">Parigi, capitale della Francia, è una delle città più
+                                    importanti d'Europa, centro mondiale di arte, moda, gastronomia e cultura.</p>
+                                <a href="#" class="btn btn-info text-black mt-auto">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--4-->
+                    <div class="col">
+                        <div class="card border-info h-100 d-flex flex-column">
+                            <img src="assets/img/roma.webp" class="card-img-top" alt="Destinazione"
+                                style="height: 200px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column flex-grow-1">
+                                <h5 class="card-title">Roma</h5>
+                                <p class="card-text flex-grow-1">Roma, capitale dell’Italia, è una grande città
+                                    cosmopolita con una storia artistica, architettonica e culturale che ha influenzato
+                                    tutto il mondo e che risale a quasi 3000 anni fa.</p>
+                                <a href="#" class="btn btn-info text-black mt-auto">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Summer Section -->
+        <section id="welcome-summer" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Welcome Summer</h2>
+                <!-- Griglia -->
+                <div class="row row-cols-1 row-cols-md-3 g-3">
+                    <!-- Card 1 -->
+                    <div class="col">
+                        <div class="card shadow" style="width: 16rem;">
+                            <img src="assets/img/bali.webp" class="card-img-top" alt="Destinazione"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Bali</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary text-white">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="card shadow" style="width: 16rem;">
+                            <img src="assets/img/japan.webp" class="card-img-top" alt="Destinazione"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Tokyo</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary text-white">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="card shadow" style="width: 16rem;">
+                            <img src="assets/img/parigi.avif" class="card-img-top" alt="Destinazione"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Parigi</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary text-white">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="col">
+                        <div class="card shadow" style="width: 16rem;">
+                            <img src="assets/img/roma.webp" class="card-img-top" alt="Destinazione"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Roma</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary text-white">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="col">
+                        <div class="card shadow" style="width: 16rem;">
+                            <img src="assets/img/sidney.jpg" class="card-img-top" alt="Destinazione"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Sidney</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary text-white">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="col">
+                        <div class="card shadow" style="width: 16rem;">
+                            <img src="assets/img/vienna.jpg" class="card-img-top" alt="Destinazione"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Vienna</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary text-white">Prenota</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Recensioni Section -->
+        <section id="recensioni" class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Dicono di noi</h2>
+                <div class="row g-4">
+                    <!-- Recensione -->
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <img src="assets/img/pippointera.webp" class="rounded-circle border border-info me-3"
+                                style="width: 50px; height: 50px;" alt="User">
+                            <div>
+                                <h5>Pippo</h5>
+                                <p>Lorem ipsum dolor sit amet,
+                                    consectetur adipisicing elit.
+                                    Officia, assumenda.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <img src="assets/img/plutointera.webp" class="rounded-circle border border-info me-3"
+                                style="width: 50px; height: 50px;" alt="User">
+                            <div>
+                                <h5>pluto</h5>
+                                <p>Lorem ipsum dolor sit amet,
+                                    consectetur adipisicing elit.
+                                    Officia, assumenda.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex">
+                            <img src="assets/img/Paperino_360_ok.webp" class="rounded-circle border border-info me-3"
+                                style="width: 50px; height: 50px;" alt="User">
+                            <div>
+                                <h5>Paperino</h5>
+                                <p>Lorem ipsum dolor sit amet,
+                                    consectetur adipisicing elit.
+                                    Officia, assumenda.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-4">
+            <div class="container">
+                <a href="#" class="btn btn-outline-light">Contattaci</a>
+                <p class="p-4">© 2021 Kalina Travel LTD. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    </body>
 
 </html>
